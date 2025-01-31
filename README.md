@@ -49,13 +49,57 @@ A full-stack web application for managing personal tasks, built with a **Flask R
 - Node.js 16+
 - npm 8+
 
-### Backend Setup
+ 
+### create folder
+-create task management system folder
+-create frontend and backend folder
+
+
+### frontend setup 
+-npx create -react-app .
+-create component folder into src folder
+-create login and signup page
+-run npm start
+
+
+### Backend setup
+-install python 
+-install pip
 -create virtual environment
 -activate virtual environment
--create flask
-and reun server by python app.py
+-install flask
+- run server by python app.py
+- create model and create login signup with help of jwt
+- install SQLAlchemy
+- install Resource ,Api
+- install  request,jsonify
+- install jwt_required,JWTManager
+- get_jwt_identity
+- check all the requests through postman
 
-### frontend 
-by npm start
+  ##creating SQLite
+  store user details like name emaild and password
 
-    
+
+   ## connectivity of frontend and backend
+  -install Cors
+  -install axios
+
+  ##creating todo in backend first
+ - create task model
+ - perform CRUD operation through protected route and check through postman
+
+   ## creating in frontend
+   -create dashboard
+   -create to do form for taking input
+   -fetch ,create,update,delete
+   -display todo
+   and connecting with backend
+
+
+   
+  
+  
+  
+
+
