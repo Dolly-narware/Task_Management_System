@@ -1,11 +1,13 @@
 import { useState } from "react";
 import axios from "axios";
-import './signup.css';
+import './Login.css';
+import { useNavigate } from "react-router-dom";
 
 const Login = ({ setAction }) => {
     const [emailid, setEmailId] = useState("");
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
+    const navigate = useNavigate();
 
     const handleLogin = async () => {
         try {
@@ -14,7 +16,12 @@ const Login = ({ setAction }) => {
                 password
             });
 console.log(response)
-            setMessage(response.data.message);
+              if (response.data.access_token) {
+                localStorage.setItem("token", response.data.access_token);
+                setMessage(response.data.message);
+                navigate("/dashboard");
+              }
+            
         } catch (error) {
             setMessage(error.response?.data?.error || "Something went wrong");
         }
@@ -44,14 +51,12 @@ console.log(response)
                     />
                 </div>
             </div>
-            <div className="forgot-password">
-                Forgot password? <span>Click Here!</span>
-            </div>
+           
             {message && <p className="message">{message}</p>}
             <div className="submit-container">
                 <button className="submit" onClick={handleLogin}>Login</button>
                 <div className="switch-text">
-                    Don't have an account? <span onClick={() => setAction("Sign Up")}>Sign Up</span>
+                    Don't have an account? <button onClick={() => navigate("/signup")}>Sign Up</button>
                 </div>
             </div>
         </div>

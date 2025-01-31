@@ -4,6 +4,7 @@ from  flask_restful import Resource,Api
 from flask_jwt_extended import create_access_token, jwt_required,JWTManager, get_jwt_identity
 from flask_cors import CORS
 from datetime import datetime
+from datetime import timedelta
 from dotenv import load_dotenv
 load_dotenv()
 # from routes import task_bp
@@ -14,6 +15,7 @@ CORS(app)
 
 app.config['SECRET_KEY']=' SUPER-SECRET-KEY'
 app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///database4.db'
+app.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(hours=24)
 
 # //create instance of db
 db=SQLAlchemy(app)
@@ -153,7 +155,7 @@ def delete_task(task_id):
     db.session.delete(task)
     db.session.commit()
     return jsonify({"message": "Task deleted"}), 200
-    
+
 api.add_resource(UserRegistration,'/register')
 api.add_resource(UserLogin,'/login')
 api.add_resource(protectedResource, '/tasks')

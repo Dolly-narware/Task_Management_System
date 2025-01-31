@@ -1,22 +1,21 @@
-import logo from './logo.svg';
-import AxiosExample from './components/axios';
-import SignUp from './components/signup';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Login from './pages/Login';
+import SignUp from './pages/Signup';
+import Dashboard from './pages/Dashboard';
+import ProtectedRoute from './components/ProtectedRoute';
 
-
-import './App.css';
-import LoginSignup from './components/LoginSignup/LoginSignup';
-import Login from './components/login';
-
-function App() {
-  return (
-    <div>
-     {
-    //  <AxiosExample />
-      // <SignUp/>
-     <Login/>
-     }
-    </div>
-  );
-} 
+const App = () => {
+    return (
+        <Router>
+            <Routes>
+                <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<SignUp />} />
+                <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+                <Route path="/" element={<Login />} />
+            </Routes>
+        </Router>
+    );
+};
 
 export default App;

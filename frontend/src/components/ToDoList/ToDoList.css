@@ -1,0 +1,121 @@
+
+
+li{
+    text-align: left;
+}
+
+
+.container{
+    margin: 56px !important;
+}
+
+.completed{
+    background-color: green;
+    padding: 0 6px;
+    height: fit-content;
+    margin: auto 0;
+    border-radius: 4px;
+    color: white;
+}
+
+.pending{
+    background-color: red;
+    padding: 0 6px;
+    height: fit-content;
+    margin: auto 0;
+    border-radius: 4px;
+    color: white;
+}
+
+li{
+    width: 50%;
+    margin-top: 6px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.content{
+    width: 25%;
+}
+.todo-container {
+    margin: 20px auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 900px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Header Styling */
+  .todo-list {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 20px;
+  }
+  
+  /* Table Styles */
+  .todo-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .todo-table th,
+  .todo-table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  .todo-table th {
+    background-color: #34495e;
+    color: white;
+  }
+  
+  .todo-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .todo-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Button Styles */
+  button {
+    padding: 6px 12px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+  }
+  
+  /* Mark as Completed Button (Green) */
+  .mark-completed {
+    background-color: #27ae60; /* Green */
+  }
+  
+  .mark-completed:hover {
+    background-color: #2ecc71; /* Lighter Green */
+  }
+  
+  /* Mark as Pending Button (Red) */
+  .mark-pending {
+    background-color: #e74c3c; /* Red */
+  }
+  
+  .mark-pending:hover {
+    background-color: #c0392b; /* Darker Red */
+  }
+  .delete-btn {
+    background-color: #c0392b; /* Blue */
+  }
+  
+  .delete-btn:hover {
+    background-color: #3a0d08; /* Darker Blue */
+  }  

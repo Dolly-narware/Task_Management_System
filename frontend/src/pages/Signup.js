@@ -1,12 +1,14 @@
 import { useState } from "react";
 import axios from "axios";
-import './signup.css'
+import './Signup.css'
+import { useNavigate } from "react-router-dom";
 
 const SignUp = ({ setAction }) => {
     const [name, setName] = useState("");
     const [emailid, setEmailId] = useState("");
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
+    const navigate = useNavigate();
 
     const handleSignUp = async () => {
         try {
@@ -15,8 +17,8 @@ const SignUp = ({ setAction }) => {
                 emailid,
                 password
             });
-
             setMessage(response.data.message);
+            navigate("/login");
         } catch (error) {
             setMessage(error.response?.data?.error || "Something went wrong");
         }
@@ -58,7 +60,7 @@ const SignUp = ({ setAction }) => {
             <div className="submit-container">
                 <button className="submit" onClick={handleSignUp}>Sign Up</button>
                 <div className="switch-text">
-                    Already have an account? <span onClick={() => setAction("Login")}>Login</span>
+                    Already have an account? <button onClick={() => navigate("/login")}>Login</button>
                 </div>
             </div>
         </div></>
